@@ -1,0 +1,49 @@
+.show {
+    /* background-color: red; */
+    height: 50vh;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.show-summary {
+    border: 2px solid #EDEDEE;
+    padding: 10px 40px;
+    transform: rotate(-1deg);
+    background-color: white;
+}
+
+.show-summary h2 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.show-summary p{
+    font-size: 16px;
+    color: #444343;
+}
+
+.show-summary-outer {
+    border: 2px solid #EDEDEE;
+    transform: rotate(3deg);
+    background-color: white;
+}
+
+.show-summary-outer2{
+    border: 2px solid #EDEDEE;
+    transform: rotate(-2deg);
+    background-color: white;
+}
+
+.show-seasons {
+    font-size: 13pt;
+}
+
+select {
+    width: 15%;
+}
+
+option {
+    font-size: 14px;
+}

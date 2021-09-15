@@ -1,0 +1,62 @@
+.episode-content {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    display: none;
+    padding: 25px;
+    border: 2px solid #EDEDEE;
+    position: absolute;
+    top: 400px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.active-episode {
+    display: flex;
+}
+
+.episode-content-name-summary h3{
+    font-size: 18px;
+}
+
+.episode-content-name-summary{
+    position: relative;
+}
+
+.episode-content-name-summary p {
+    font-size: 13px;
+}
+
+.episode-hide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #FF3801;
+    cursor: pointer;
+}
+
+.episode-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 733px) {
+    .episode-content {
+        width: 200px; 
+        height: 100px;
+        padding: 10px;
+        top: 400px;
+    }
+    .episode-content img {
+        width: 25px;
+        height: 25px;
+    }
+    .episode-content-name-summary p {
+        font-size: 13px;
+    }
+    .episode-content-name-summary h3{
+        font-size: 14px;
+    }
+}

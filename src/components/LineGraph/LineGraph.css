@@ -1,0 +1,42 @@
+.line-graph {
+    display: flex;
+    overflow: hidden;
+    width: 90vw;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: orangered;
+    z-index: 2;
+    cursor: pointer;
+    margin: 0;
+    border: 2px solid lightgray;
+}
+
+.selected-dot {
+    background-color: black;
+}
+
+
+.dot div {
+    background-color: lightgray;
+    width: 100px;
+    height: 2px;
+    z-index: 1;
+}
+
+.dot div:first-of-type {
+    margin-bottom: 2px;
+}
+
+@media only screen and (max-width: 900px) {
+    .line-graph {
+        overflow-x: scroll;
+        /* display: none; */
+    }
+    .line-graph p {
+        font-size: 10px;
+    }
+}

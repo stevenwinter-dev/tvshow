@@ -1,0 +1,36 @@
+nav {
+    background-color: #EFEFEF;
+    display: flex;
+    padding-left: 5%;
+    /* height: 10vh; */ 
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+    color: #333;
+    padding: 0;
+}
+
+nav ul li{
+    padding: 30px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav ul:last-child {
+    margin-left: 10px;
+}
+
+/* nav ul:first-child {
+    border-right: 1px solid #333;
+} */
+
+nav ul li:hover {
+    color: #FF3801;
+}
+
+nav ul:first-of-type {
+    font-weight: bold;
+}

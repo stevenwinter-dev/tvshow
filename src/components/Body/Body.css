@@ -1,0 +1,13 @@
+.body {
+    /* height: 70vh; */
+    height: 100%;
+    padding-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.body-left {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}

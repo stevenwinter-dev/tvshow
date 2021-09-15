@@ -1,0 +1,109 @@
+.side-logo {
+    background-color: #EFEFEF;
+    width: 30%;
+    height: 40%;
+}
+
+.grid-container {
+    /* width: 400px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "space T V line"
+    "dot S H line2"
+    "space2 O W W";
+    font-weight: 800;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 90px;
+    text-align: center;
+    padding-bottom: 30px;
+    background-color: #EFEFEF;
+}
+
+#T, #V , #line{
+    margin-top: 20px;
+}
+
+#T, #S, #O {
+    padding-left: 15px;
+}
+
+#line, #line2 {
+    height: 100px;
+    width: 20px;
+    background-color: #FF3801;
+    border-radius: 20px;
+}
+
+#line2 {
+    margin-top: -48px;
+    height: 200px;
+}
+
+#space, #space2, #dot {
+    background-color: blue;
+}
+
+#dot {
+    height: 40px;
+    width: 40px;
+    background-color: #FF3801;
+    border-radius: 50%;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.logo-element-container {
+    background-color: #FFFFFF;
+    margin-bottom: -30px;
+}
+
+@media only screen and (max-width: 1441px) {
+    .side-logo {
+        /* width: 20%; */
+        width: fit-content;
+    }
+    .grid-container {
+        font-size: 70px;
+    }
+    #line, #line2 {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .side-logo {
+        height: 30%;
+    }
+
+    .grid-container {
+        font-size: 70px;
+    }
+    #line, #line2 {
+        height: 75px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .grid-container {
+        font-size: 40px;
+        margin-left: -10px;
+    }
+    #line, #line2 {
+        height: 35px;
+    }
+    #line2 {
+        margin-top: -20px;
+        height: 70px;
+    }
+    #dot {
+        height: 20px;
+        width: 20px;
+        background-color: #FF3801;
+        border-radius: 50%;
+        margin-top: 25px;
+        margin-left: 40px;
+    }
+}

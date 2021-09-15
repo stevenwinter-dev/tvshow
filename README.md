@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# TV Show App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![TV SHOW App](https://i.imgur.com/e84lnqI.png)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+The TV SHOW App leverages the TV Maze API to display information about tv shows. The user can type in a show name character by character for suggestions or input the entire show name for a specific result. Once loaded, the user then has an option to select a season and view information on specific episodes from that season. 
 
-### `npm start`
+![Demo](https://media3.giphy.com/media/1CWi7RaCabhF6vNr9t/giphy.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- HTML
+- CSS
+- JavaScript
+- React
 
-### `npm test`
+## Install Instructions
+```bash
+git clone
+cd tvshow
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
 
-### `npm run build`
+### MVP
+- As a user, I want to search for a specific tv show.
+- As a user, I want to see how many seasons of a show are available.
+- As a user, I want to select individual episodes from the show and view more details.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Major Hurdles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The first major hurdle was the time constraint for this project. Having a goal finish time of 6-8 hours was quite challenging. I did not use a timer but imagine I was fairly close to this time table, if not a tad over. 
+- The next major hurdle was navigating the TV Maze API. I had hoped a call to the 'shows' route would return the tv show and all of the content I needed. Unfortunately, that was not the case. For specific episode details I needed an extra api call to the 'seasons' route. From there I embedded 'episodes' at the end of my 'season' request. The work flow looked like this: 
+  - User inputs tv show and I fetch data using ```http://api.tvmaze.com/shows/${show.show.id}/seasons```. 
+  - From that request I give the user the appropriate number of season options.
+  - Based on that selection, I then have the season ID for the next api request: ```https://api.tvmaze.com/seasons/${seasonId}?embed=episodes```, thus returning everything needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future Features
 
-### `npm run eject`
+- There are definitely some bugs remaining in this code. The first I'd love to tackle, given more time, is an issue with displaying the episode cards after clicking the corrosponding dot. Right now it works much of the time but not every time. I think a solution would be to put the episode card display function in a useEffect to insure the correct components are reloaded once the episode information arrives.
+- The search bar is not totally optimized. The dropdown options while the user is typing appears in the body of the site rather than an actual dropdown menu and only one option is displayed at a time. This would require a slight rework and for the time I had I decided there were more pressing features to implement.
+- Much of the site is mobile responsive but, depending on how many characters are in a specific show summary, there are some overflow issues. A few more hours would be required to get this fully responsive, at least up to my usual standards.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## I had a fun time working on this one! Thanks for checking it out!
