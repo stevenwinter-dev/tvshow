@@ -10,6 +10,7 @@ const Show = ({show}) => {
     const [loadingEpisodes, setLoadingEpisodes] = useState(true)
     const [episodes, setEpisodes] = useState(null)
     const [selectedSeason, setSelectedSeason] = useState(null)
+    const [ifError, setIfError] = useState(false)
     // const handleClick = () => {
     //     let response = await axios(`http://api.tvmaze.com/shows/${show.show.id}/seasons/`)
     // }
@@ -32,10 +33,14 @@ const Show = ({show}) => {
             const seasonArrayNum = selectedSeason - 1
             console.log(`FETCH EP DATA${seasonArrayNum}`)
             const seasonId = seasonsData[seasonArrayNum].id
-            let response = await axios(`https://api.tvmaze.com/seasons/${seasonId}?embed=episodes`)
-            setEpisodes(response.data._embedded)
-            console.log(episodes)
-            setLoadingEpisodes(false)
+           try {
+                let response = await axios(`https://api.tvmaze.com/seasons/${seasonId}?embed=episodes`)
+                setEpisodes(response.data._embedded)
+                console.log(episodes)
+                setLoadingEpisodes(false)
+           } catch (error) {
+               setIfError(true)
+           }
         }
     }
 
@@ -49,6 +54,7 @@ const Show = ({show}) => {
 
     return (
         <div className='show'>
+        {ifError ? <p>Error</p> : null}
             <div>
                 <div className="show-summary-outer">
                     <div className="show-summary-outer2">

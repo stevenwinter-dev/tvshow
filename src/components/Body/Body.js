@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Search from '../Search/Search'
 import Show from '../Show/Show'
 import SideLogo from '../SideLogo/SideLogo'
@@ -20,7 +20,8 @@ const Body = () => {
     const handleClear = (e) => {
         setLoading(true)
         setClear(true)
-        e.target.form.children[0].value = ''
+        // e.target.form.children[0].value = ''
+        setSearchTerm('')
     }
 
     const fetchData = async () => {
@@ -40,7 +41,7 @@ const Body = () => {
         return (
         <div className='body'>
             <div className="body-left">
-                <Search handleSubmit={handleSubmit} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                <Search handleSubmit={handleSubmit} searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleClear={handleClear} />
             </div>
 
             <SideLogo />

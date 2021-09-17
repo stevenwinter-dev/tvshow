@@ -26,3 +26,10 @@ footer {
         font-size: 12px;
     }
 }
+
+@media only screen and (max-width: 501px) {
+    .footer-contact:first-of-type {
+        flex-direction: column;
+        color: red;
+    }
+}
